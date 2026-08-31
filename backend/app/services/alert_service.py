@@ -12,13 +12,16 @@ def _get_project_or_404(project_id: int, db: Session):
         .first()
     )
 
+
     if not project:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail="Project not found"
         )
 
+
     return project
+
 
 
 def create_high_risk_alert(

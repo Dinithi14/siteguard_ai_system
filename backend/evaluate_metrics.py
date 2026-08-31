@@ -29,6 +29,7 @@ def main():
     print("=" * 60)
 
     # --- Classification Metrics ---
+    
     if "classification" in metrics:
         print("\n📊 CLASSIFICATION MODEL (Delay Risk Prediction)")
         print("-" * 60)
@@ -49,6 +50,7 @@ def main():
             print(f"    True Positives:  {cm[1][1]}")
 
     # --- Regression Metrics ---
+
     if "regression" in metrics:
         print("\n📏 REGRESSION MODEL (Delay Days Prediction)")
         print("-" * 60)
@@ -58,6 +60,7 @@ def main():
         print(f"  Test Set Size:     {reg_metrics.get('test_set_size', 'N/A')} delayed projects")
 
     # --- Feature Importance ---
+
     if "feature_importance" in metrics:
         print("\n🎯 FEATURE IMPORTANCE")
         print("-" * 60)

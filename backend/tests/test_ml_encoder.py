@@ -9,6 +9,7 @@ from app.core.config import settings
 
 @pytest.mark.skipif(not MODEL_LOADED, reason="Model not trained yet. Run train_model.py first.")
 class TestMLFeatureEncoder:
+
     """Test ML feature encoders for categorical columns"""
 
     def test_encoders_loaded(self):
@@ -94,7 +95,9 @@ class TestMLFeatureEncoder:
         assert decoded == original_class
 
     def test_encoder_handles_all_classes(self):
+
         """Test that all classes in encoder are valid"""
+        
         for col in settings.CATEGORICAL_COLS:
             encoder = encoders[col]
             

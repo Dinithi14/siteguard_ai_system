@@ -9,9 +9,11 @@ from fastapi import HTTPException
 
 
 class TestMLPredictionLowRisk:
+
     """Test ML predictions for low-risk scenarios"""
 
     def test_ml_prediction_low_risk(self):
+
         """Test prediction for low-risk project characteristics"""
         input_data = {
             "project_type": "Residential",
@@ -26,6 +28,7 @@ class TestMLPredictionLowRisk:
         result = run_prediction(input_data)
         
         # Should return a dict with expected keys
+
         assert isinstance(result, dict)
         assert "risk_level" in result
         assert "delay_probability" in result
@@ -33,12 +36,15 @@ class TestMLPredictionLowRisk:
         assert "estimated_delay_days" in result
         
         # Probabilities should sum to ~1.0
+
         total_prob = result["delay_probability"] + result["no_delay_probability"]
         assert abs(total_prob - 1.0) < 0.01
 
     def test_ml_prediction_good_material_availability(self):
         """Test that good material availability reduces delay risk"""
+
         # Good material availability should result in lower risk
+        
         input_data = {
             "project_type": "Residential",
             "project_size": "Small",

@@ -8,6 +8,7 @@ from app.core.database import Base
 
 
 class MilestonePriority(str, Enum):
+
 	LOW = "LOW"
 	MEDIUM = "MEDIUM"
 	HIGH = "HIGH"
@@ -15,6 +16,7 @@ class MilestonePriority(str, Enum):
 
 
 class MilestoneStatus(str, Enum):
+	
 	NOT_STARTED = "NOT_STARTED"
 	IN_PROGRESS = "IN_PROGRESS"
 	DELAYED = "DELAYED"
@@ -24,6 +26,7 @@ class MilestoneStatus(str, Enum):
 
 
 class Milestone(Base):
+
 	__tablename__ = "milestones"
 
 	id: Mapped[int] = mapped_column(

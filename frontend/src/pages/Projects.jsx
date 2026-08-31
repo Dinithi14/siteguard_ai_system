@@ -7,6 +7,7 @@ import { Toast } from '../components/common/Toast';
 import Modal from '../components/common/Modal';
 import LocationAutocomplete from '../components/common/LocationAutocomplete';
 import {
+
   FolderKanban,
   Plus,
   Search,
@@ -44,6 +45,7 @@ export const Projects = () => {
     expected_end_date: '',
     supervisor_id: '',
   });
+  
   const [formError, setFormError] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [toast, setToast] = useState({ text: '', type: 'success' });

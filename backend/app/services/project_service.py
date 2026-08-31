@@ -50,6 +50,7 @@ def _serialize_project(project: Project) -> dict:
 			"email": project.supervisor.email,
 		}
 	return {
+
 		"id": project.id,
 		"name": project.name,
 		"description": project.description,
@@ -68,6 +69,7 @@ def _serialize_project(project: Project) -> dict:
 		"supervisor": supervisor_data,
 		"created_at": project.created_at,
 		"updated_at": project.updated_at,
+		
 	}
 
 
@@ -158,6 +160,7 @@ def update_project(
 	data: ProjectUpdateRequest,
 	db: Session
 ):
+
 	project = get_project_by_id(project_id, db)
 
 	next_start_date = data.start_date if data.start_date is not None else project.start_date
